@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'to_do.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME':config('DB_NAME'),
         'USER':config('DB_USER'),
         'PASSWORD':config('DB_PASSWORD'),
@@ -113,7 +113,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en_US'
+LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'America/Sao_Paulo'
 
@@ -123,6 +123,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Adicionar LANGUAGES se não estiver presente
+LANGUAGES = [
+    ('en', 'English'),
+    # Adicione outros idiomas conforme necessário
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
@@ -141,3 +146,6 @@ PUBLIC_VIEWS = [
     'django.contrib.auth.views.LoginView',
     'django.contrib.auth.views.LogoutView'
 ]
+
+# Configurar DEFAULT_AUTO_FIELD
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
