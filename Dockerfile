@@ -8,10 +8,9 @@ WORKDIR /usr/src/app
 COPY requirements.txt ./
 
 # Instalando os requerimentos com o PIP
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Instalando o driver MySQL
-RUN pip install mysqlclient
+# Instalando os requerimentos com o PIP e o driver MySQL
+RUN pip install --no-cache-dir -r requirements.txt && \
+    pip install mysqlclient
 
 # Expondo a porta da APP
 EXPOSE 8000
