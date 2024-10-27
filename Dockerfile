@@ -9,8 +9,7 @@ COPY requirements.txt ./
 
 # Instalando os requerimentos com o PIP
 # Instalando os requerimentos com o PIP e o driver MySQL
-RUN pip install --no-cache-dir -r requirements.txt && \
-    pip install mysqlclient
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Expondo a porta da APP
 EXPOSE 8000
